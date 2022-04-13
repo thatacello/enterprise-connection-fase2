@@ -26,6 +26,7 @@ export const NormalizeStyles = createGlobalStyle`
     body {
         margin: 0;
         font-family: ${FontFamilies.PRIMARY};
+        overflow: hidden;
     }
     /**
      * Render the "main" element consistently in IE.

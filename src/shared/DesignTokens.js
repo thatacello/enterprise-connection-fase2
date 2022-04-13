@@ -10,6 +10,7 @@ export const FontFamilies = {
 };
 export const FontSizes = {
 	size_20: '1.25rem',
+	size_23: '1.4rem',
 	size_25: '1.56rem',
 	size_30: '1.875rem',
 	size_60: '3.75rem',
