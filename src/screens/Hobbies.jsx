@@ -2,6 +2,8 @@ import { Header } from '../common-components/Header/Header';
 import { hobbies } from '../shared/Links';
 import styled from 'styled-components';
 import { Colors, FontFamilies, FontSizes } from '../shared/DesignTokens';
+import Hobbies1 from '../assets/images/hobbies1.png';
+import Hobbies2 from '../assets/images/hobbies2.png';
 
 const Container = styled.div`
   height: 100vh;
@@ -12,6 +14,7 @@ const Container = styled.div`
 const ImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100vh;
 `;
 
 const TextContainer = styled.div`
@@ -25,7 +28,8 @@ const TextContainer = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 4rem 0;
 
   .pink {
     color: ${Colors.secondary};
@@ -41,7 +45,9 @@ const Title = styled.div`
   font-family: ${FontFamilies.secondary};
 `;
 
-const Image = styled.img`
+const Image = styled.img.attrs({
+    draggable: false,
+})`
   height: 32rem;
   width: 23rem;
 `;
@@ -55,13 +61,13 @@ export function Hobbies() {
           <Content>
             <Title className="blue">TÊNIS</Title>
             <Image
-              src="../assets/images/hobbies1.png"
+              src={Hobbies1}
               alt="máquina fotográfica"
             />
           </Content>
 
           <Content>
-            <Image src="../assets/images/hobbies2.png" alt="raquete de tênis" />
+            <Image src={Hobbies2} alt="raquete de tênis" />
             <Title className="pink">FOTOGRAFIA</Title>
           </Content>
         </ImagesContainer>

@@ -57,7 +57,7 @@ export function Experiencia() {
       <ImageContainer>
         {imageContent.map((item) => (
           <Item>
-            <Image src={`../assets/images/${item.image}.png`} />
+            <Image src={`/assets/images/${item.image}`} />
             <Description>{item.description}</Description>
           </Item>
         ))}

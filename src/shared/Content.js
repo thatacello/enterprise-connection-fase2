@@ -59,19 +59,19 @@ export const experienciaContent = [
 
 export const imageContent = [
   {
-    image: 'js',
+    image: 'js.png',
     description: '3 anos de experiência',
   },
   {
-    image: 'api',
+    image: 'api.png',
     description: '4 anos de experiência',
   },
   {
-    image: 'java',
+    image: 'java.png',
     description: '5 anos de experiência',
   },
   {
-    image: 'python',
+    image: 'python.png',
     description: '6 anos de experiência',
   },
 ];

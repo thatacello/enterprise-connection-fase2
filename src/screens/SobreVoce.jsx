@@ -2,16 +2,25 @@ import styled from 'styled-components';
 import { Header } from '../common-components/Header/Header';
 import { Colors, FontFamilies, FontSizes } from '../shared/DesignTokens';
 import { sobreVoce } from '../shared/Links';
+import In from '../assets/icons/in-icon.svg';
+import Slack from '../assets/icons/slack-icon.svg';
+import Perfil from '../assets/images/foto-perfil.png';
 
 const Container = styled.div`
   height: 100vh;
   background-color: ${Colors.neutral};
 `;
 
-const Image = styled.div`
+const Image = styled.img`
   width: 40vw;
   height: 100vh;
-  background-image: url('../assets/images/foto-perfil.png');
+  margin-top: -10rem;
+`;
+
+const Icons = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 2rem;
 `;
 
 const TextContent = styled.section`
@@ -38,6 +47,10 @@ const Info = styled.span`
   margin-bottom: 2rem;
 `;
 
+const SocialMedia = styled.span`
+  font-size: ${FontSizes.size_20};
+`;
+
 const InfoSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,11 +66,8 @@ const SocialMediaSection = styled.div`
   display: flex;
   flex-direction: row;
   font-family: ${FontFamilies.secondary};
-
-    p {
-      font-size: ${FontSizes.size_20}
-      margin-left: 2rem;
-    }
+  align-items: center;
+  margin-bottom: 1rem;
 `;
 
 const Button = styled.button`
@@ -91,7 +101,7 @@ export function SobreVoce() {
         <Header menu={sobreVoce} />
 
         <Content>
-          <Image src="/assets/images/foto-perfil.png" alt="foto de perfil" />
+          <Image src={Perfil} alt="foto de perfil" />
 
           <TextContent>
             <Title>
@@ -105,12 +115,12 @@ export function SobreVoce() {
               <Info id="resultado"></Info>
             </InfoSection>
             <SocialMediaSection>
-              <img src="../assets/icons/in-icon.svg" alt="" />
-              <p>@fulaninho</p>
+              <Icons src={In} alt="" />
+              <SocialMedia>@fulaninho</SocialMedia>
             </SocialMediaSection>
             <SocialMediaSection>
-              <img src="../assets/icons/slack-icon.svg" alt="" />
-              <p>@fulaninho</p>
+              <Icons src={Slack} alt="" />
+              <SocialMedia>@fulaninho</SocialMedia>
             </SocialMediaSection>
           </TextContent>
         </Content>
