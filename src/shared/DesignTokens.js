@@ -4,6 +4,9 @@ export const Colors = {
 	dark: '#000000',
 	neutral: '#E5E5E5',
 };
+export const Gradient = {
+	neutral_gradient: 'linear-gradient(#FFF, #E5E5E5, #FFF)',
+}
 export const FontFamilies = {
 	primary: '"Inter", sans-serif',
 	secondary: '"Poppins", sans-serif',

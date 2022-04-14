@@ -62,6 +62,7 @@ const SocialMediaSection = styled.div`
 
 const Button = styled.button`
   width: 10rem;
+  margin-bottom: 1rem;
 `;
 
 function consultaEndereco() {
@@ -100,8 +101,8 @@ export function SobreVoce() {
               <Info>fulanadasilva@gmail.com</Info>
               <Info>(11) 99999-9999</Info>
               <Info>CEP: 09250-060</Info>
-              <Info id="resultado"></Info>
               <Button onClick={() => consultaEndereco()}>Ver Endereço</Button>
+              <Info id="resultado"></Info>
             </InfoSection>
             <SocialMediaSection>
               <img src="../assets/icons/in-icon.svg" alt="" />
