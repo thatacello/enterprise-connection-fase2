@@ -8,11 +8,10 @@ const Container = styled.div`
   background-color: ${Colors.neutral};
 `;
 
-const ImageContainer = styled.section``;
-
-const Image = styled.img`
+const Image = styled.div`
   width: 40vw;
   height: 100vh;
+  background-image: url('../assets/images/foto-perfil.png');
 `;
 
 const TextContent = styled.section`
@@ -50,6 +49,40 @@ const Content = styled.section`
   font-family: ${FontFamilies.secondary};
 `;
 
+const SocialMediaSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-family: ${FontFamilies.secondary};
+
+    p {
+      font-size: ${FontSizes.size_20}
+      margin-left: 2rem;
+    }
+`;
+
+const Button = styled.button`
+  width: 10rem;
+`;
+
+function consultaEndereco() {
+  let cep = '09250060';
+  let url = `https://viacep.com.br/ws/${cep}/json/`;
+
+  fetch(url).then(function (response) {
+    response.json().then(function (data) {
+      mostrarEndereco(data);
+    });
+  });
+}
+
+function mostrarEndereco(dados) {
+  let resultado = document.querySelector('#resultado');
+
+  resultado.innerHTML = `Endereço: ${dados.logradouro} <br>
+    Bairro: ${dados.bairro} <br>
+    Cidade: ${dados.localidade} - ${dados.uf}`;
+}
+
 export function SobreVoce() {
   return (
     <>
@@ -57,9 +90,7 @@ export function SobreVoce() {
         <Header menu={sobreVoce} />
 
         <Content>
-          <ImageContainer>
-            <Image src="../assets/images/foto-perfil.png" alt="" />
-          </ImageContainer>
+          <Image src="/assets/images/foto-perfil.png" alt="foto de perfil" />
 
           <TextContent>
             <Title>
@@ -68,10 +99,18 @@ export function SobreVoce() {
             <InfoSection>
               <Info>fulanadasilva@gmail.com</Info>
               <Info>(11) 99999-9999</Info>
-              <Info>
-                R. Zâmbia - Jardim das Maravilhas Santo André - SP, 09250-060
-              </Info>
+              <Info>CEP: 09250-060</Info>
+              <Info id="resultado"></Info>
+              <Button onClick={() => consultaEndereco()}>Ver Endereço</Button>
             </InfoSection>
+            <SocialMediaSection>
+              <img src="../assets/icons/in-icon.svg" alt="" />
+              <p>@fulaninho</p>
+            </SocialMediaSection>
+            <SocialMediaSection>
+              <img src="../assets/icons/slack-icon.svg" alt="" />
+              <p>@fulaninho</p>
+            </SocialMediaSection>
           </TextContent>
         </Content>
       </Container>
